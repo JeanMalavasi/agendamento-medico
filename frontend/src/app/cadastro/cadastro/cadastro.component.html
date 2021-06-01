@@ -1,0 +1,71 @@
+<div class="input-message">
+  <form (ngSubmit)="onSubmit(refLocalForm)" #refLocalForm="ngForm" ngNativeValidate>
+    <div class="form-group">
+
+      <!-- <div class="mb-3 row">
+        <label for="data" class="col-sm-2 col-form-label">Data</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="data" name="data" 
+          ngModel>
+        </div>
+      </div>
+
+
+      <div class="mb-3 row">
+        <label for="horario" class="col-sm-2 col-form-label">Hora</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="horario"
+          name="horario" 
+          ngModel>
+        </div>
+      </div> -->
+
+      <div class="mb-3 row">
+        <label for="data" class="col-2 col-form-label">Data</label>
+        <div class="col-10">
+          <input class="form-control" type="date" value="2011-08-19" id="data" name="data" ngModel>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="horario" class="col-2 col-form-label">Hora</label>
+        <div class="col-10">
+          <input class="form-control" type="time" value="13:45:00" id="horario" name="horario" ngModel>
+        </div>
+      </div>
+
+
+      <div class="mb-3 row">
+        <label for="nome" class="col-sm-2 col-form-label">Nome do Paciente</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="nome" 
+          name="nome" 
+          ngModel>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="medico" class="col-sm-2 col-form-label">Nome do medico</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="medico" 
+          name="medico" 
+          ngModel>
+        </div>
+      </div>
+
+      
+
+      <div class="mb-3 row">
+        <label for="paciente" class="col-sm-2 col-form-label">Cpf do paciente</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="paciente" 
+          name="paciente" 
+          ngModel>
+        </div>
+      </div>
+
+
+    </div>
+  <button class="btn btn-success salve-message" type="submit">Cadastrar</button>
+  </form>
+</div>

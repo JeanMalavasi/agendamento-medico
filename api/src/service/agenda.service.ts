@@ -3,6 +3,7 @@ import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { AgendaDto } from "../model/agendaDto.model";
 import { Agenda } from "../schema/agenda.schema";
+import { Medico } from "src/schema/medico.schema";
 
 //Transforma a classe em um provider, permitindo que a classe sejá injetada em outras classes.
 @Injectable()
@@ -22,5 +23,9 @@ export class AgendaService {
     //Para que os valores sejam aceitos, o nome da propriedades devem ser identicos.
     const agenda = new this.agendaModel(agendaDto);
     agenda.save()
+  }
+
+  async ObterAlguns(id: Medico): Promise<Agenda[]> {
+    return this.agendaModel.find( { medico: { $eq: id } } )
   }
 }

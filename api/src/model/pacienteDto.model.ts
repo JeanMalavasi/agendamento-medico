@@ -1,4 +1,4 @@
-import { PessoaAbs } from "src/pessoaAbs/pessoaAbs.model";
+import { PessoaAbs } from "src/model/pessoaAbs/pessoaAbs.model";
 
 //Modelo que um objeto paciente, deve seguir.
 export class PacienteDto implements PessoaAbs{

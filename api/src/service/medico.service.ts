@@ -9,9 +9,7 @@ import { Medico } from "../schema/medico.schema";
 export class MedicoService {
 
   //Injeta na classe um modelo do "medico.schema.ts"
-  constructor(@InjectModel(Medico.name) private readonly medicoModel: Model<Medico>){
-    
-  }
+  constructor(@InjectModel(Medico.name) private readonly medicoModel: Model<Medico>){  }
 
   async obterTodos(): Promise<Medico[]> {
     return this.medicoModel.find().exec()
@@ -20,5 +18,9 @@ export class MedicoService {
   async criar(medicoDto: MedicoDto) {
     const criarMedico = new this.medicoModel(medicoDto);
     criarMedico.save()
+  }
+
+  async ObterApenasUm(nome: string): Promise<Medico> {
+    return this.medicoModel.findOne({nome:  nome})
   }
 }

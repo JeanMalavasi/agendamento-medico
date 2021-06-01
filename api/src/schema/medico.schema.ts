@@ -14,7 +14,7 @@ export class Medico extends Document {
   @Prop({required: true, unique: true})
   login: string;
 
-  @Prop({required: true, unique: true})
+  @Prop({required: true})
   senha: string;
   
   @Prop({required: true, unique: true})

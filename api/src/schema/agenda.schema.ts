@@ -9,10 +9,13 @@ import { Paciente } from "src/schema/paciente.schema";
 export class Agenda extends Document {
   //Marca a propiedade abaixo, como uma propriedade no esquema
   @Prop({required: true})
-  data: number;
+  data: string;
 
   @Prop({required: true})
-  horario: number;
+  horario: string;
+
+  @Prop({required: true})
+  nome: string;
 
   //Indica a ligação entre os modelos do banco
   @Prop({type: mongoose.Schema.Types.ObjectId, ref: 'Medico'})

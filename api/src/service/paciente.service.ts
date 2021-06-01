@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import {  Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { PacienteDto } from "../model/pacienteDto.model";
@@ -24,5 +24,14 @@ export class PacienteService {
     //Para que os valores sejam aceitos, o nome da propriedades devem ser identicos.
     const paciente = new this.pacienteModel(pacienteDto);
     paciente.save()
+  }
+
+  async ObterUm(id: number): Promise<Paciente> {
+    return this.pacienteModel.findById( id )
+    // return this.agendaModel.find().exec();
+  }
+
+  async ObterApenasUm(teste: string): Promise<Paciente> {
+    return this.pacienteModel.findOne({cpf:  teste})
   }
 }

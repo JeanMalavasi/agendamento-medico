@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 import { MedicoDto } from "../model/medicoDto.model";
 import { Medico } from "../schema/medico.schema";
 import { MedicoService } from "../service/medico.service";
@@ -24,5 +24,12 @@ export class MedicoController {
   @Post()
   async criar(@Body() body) {
     this.medicoService.criar(body)
+  }
+
+
+  @Get('obterum/:nome')
+  async ObterUm(@Param('nome') params:string): Promise<Medico>{
+    return this.medicoService.ObterApenasUm(params)
+
   }
 }

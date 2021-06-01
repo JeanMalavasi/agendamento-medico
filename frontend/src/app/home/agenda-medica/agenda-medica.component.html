@@ -1,0 +1,8 @@
+<ul class="list-group separador" >
+  <li class="list-group-item active separador" (click)="flag = !flag">
+    {{ medicoModel.nome }}
+  </li>
+  <app-reservas *ngIf="flag" [_idMedico]="medicoModel._id">
+  </app-reservas>
+
+</ul>
